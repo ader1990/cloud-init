@@ -459,7 +459,7 @@ class DataSourceAzure(sources.DataSource):
         if seed:
             crawled_data['metadata']['random_seed'] = seed
         crawled_data['metadata']['instance-id'] = util.read_dmi_data(
-            'system-uuid')
+            'system-uuid').upper()
 
         if perform_reprovision:
             LOG.info("Reporting ready to Azure after getting ReprovisionData")
